@@ -1,0 +1,50 @@
+#ifndef PILA_H
+#define PILA_H
+#include <iostream>
+#include <Libro.h>
+using namespace std;
+
+class Pila
+{
+    public:
+        Pila();
+        virtual ~Pila();
+        void push(Libro);
+        Libro pop();
+        bool Empty();
+
+    protected:
+
+    private:
+        int top;
+        Libro S[10];
+};
+#include "Pila.h"
+#include <iostream>
+Pila::Pila()
+{
+   top=-1;
+}
+
+Pila::~Pila()
+{
+    //dtor
+}
+void Pila::push(Libro datos)
+{
+    top++;
+    S[top] = datos;
+}
+Libro Pila::pop()
+{
+    Libro e=S[top];
+    top--;
+    return e;
+}
+bool Pila::Empty()
+{
+    if(top==-1)
+        return false;
+    else
+        return true;
+}
