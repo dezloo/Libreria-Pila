@@ -1,0 +1,34 @@
+void OrdenarMisLecturas(Pila Libreria)
+{
+   Libro V[5];
+   Libro aux;
+   int i,j;
+   for(i=0;i<5;i++)
+   {
+       V[i]=Libreria.pop();
+   }
+   for(i=0;i<5;i++)
+   {
+       for(j=0;j<5;j++)
+       {
+           if(V[i].getn_paginas()<V[j].getn_paginas())
+           {
+               aux=V[i];
+               V[i]=V[j];
+               V[j]=aux;
+           }
+       }
+   }
+   for(i=0;i<5;i++)
+   {
+       Libreria.push(V[i]);
+   }
+   Libro x;
+   for(i=0;i<5;i++)
+   {
+       x=Libreria.pop();
+       x.mostrar();
+       cout<<"\n";
+   }
+
+}
