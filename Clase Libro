@@ -1,0 +1,71 @@
+#ifndef LIBRO_H
+#include <iostream>
+#define LIBRO_H
+using namespace std;
+
+class Libro
+{
+    public:
+        Libro();
+        Libro(int,string,string);
+        virtual ~Libro();
+        void setn_paginas(int);
+        void setautor(string);
+        void settitulo(string);
+        int getn_paginas();
+        string getautor();
+        string gettitulo();
+        void mostrar();
+
+    protected:
+
+    private:
+        int n_paginas;
+        string autor;
+        string titulo;
+};
+#include "Libro.h"
+Libro::Libro()
+{
+
+}
+Libro::Libro(int _n_paginas,string _autor, string _titulo)
+{
+    this->setn_paginas(_n_paginas);
+    this->setautor(_autor);
+    this->settitulo(_titulo);
+}
+Libro::~Libro()
+{
+    //dtor
+}
+void Libro::setn_paginas(int n)
+{
+    this->n_paginas=n;
+}
+void Libro::setautor(string n1)
+{
+    this->autor=n1;
+}
+void Libro::settitulo(string n2)
+{
+    this->titulo=n2;
+}
+int Libro::getn_paginas()
+{
+    return this->n_paginas;
+}
+string Libro::getautor()
+{
+    return this->autor;
+}
+string Libro::gettitulo()
+{
+    return this->titulo;
+}
+void Libro::mostrar()
+{
+    cout<<"Titulo: "<<titulo;
+    cout<<"\nAutor: "<<autor;
+    cout<<"\nNumero de paginas: "<<n_paginas;
+}
