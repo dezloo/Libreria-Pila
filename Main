@@ -1,0 +1,23 @@
+#include <iostream>//PAULO HERNANDEZ. MONICA HUENUVIL, MARTIN HURTADO
+#include <Libro.h>
+#include <Pila.h>
+using namespace std;
+
+int main()
+{
+   Libro principito(95,"antoine","EL Principito");
+   Libro papelucho(65,"Marcela Paz","Papelucho");
+   Libro odisea(448,"Homero","La odisea");
+   Libro perfume(318,"Patrick Suskind","El Perfume");
+   Libro ladrona(539,"Markus Zusak","La ladrona de libros");
+   Pila Libreria;
+   Libreria.push(principito);
+   Libreria.push(papelucho);
+   Libreria.push(odisea);
+   Libreria.push(perfume);
+   Libreria.push(ladrona);
+   OrdenarMisLecturas(Libreria);
+
+
+    return 0;
+}
